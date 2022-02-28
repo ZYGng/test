@@ -215,6 +215,9 @@
         arrBlocks[0][0].classList.add('focus')
       }
     }
+    window.addEventListener('pageshow', () => {
+      loading.style.display = "none";
+    })
   </script>
   <script>
     let objBlocks = {}
