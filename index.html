@@ -99,6 +99,13 @@
       font-size: 24px;
       background-color: #ccc;
     }
+
+    input.focus,
+    button.focus,
+    div.focus {
+        background-color: #006300;
+    }
+    
   </style>
 </head>
 
@@ -129,6 +136,21 @@
             <a tabindex="1" href="javascript:void(0)" class="block">playready test</a>
           </li>
         </ul>
+        <form>
+            <label class="labels">test clear input test</label>
+            <input id="ctest" value="helloworld" tabindex="1" />
+
+            <label class="labels">test insert input test</label>
+            <input id="itest" tabindex="1" />
+
+            <label class="labels">btns</label>
+            <button id="btn" tabindex="1">this button can click</button>
+            <button id="dbtn" tabindex="1">this button can not click</button>
+
+            <div id="attr" data-test="test" class="attr-test" tabindex="1">
+                this div is here
+            </div>
+        </form>
       </div>
     </div>
   </div>
@@ -139,10 +161,10 @@
     const { app, device } = window.jssdk || {}
     let loading = document.querySelector(".loading_block");
     function action(str) {
-      loading.style.display = "block";
+    //   loading.style.display = "block";
       //根据name对对应的方法传递对应的参数
       let timer = setTimeout(() => {
-        location.assign(str);
+        // location.assign(str);
         clearTimeout(timer);
       }, 100)
     }
